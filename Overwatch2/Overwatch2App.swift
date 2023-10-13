@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SDWebImageSVGCoder
 
 @main
 struct Overwatch2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
         }
     }
 }

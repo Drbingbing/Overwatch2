@@ -1,0 +1,9 @@
+[
+    {
+        "key": "assault",
+        "name": "Assault",
+        "icon": "https://overfast-api.tekrop.fr/static/gamemodes/assault-icon.svg",
+        "description": "Teams fight to capture or defend two successive points against the enemy team. It's an inactive Overwatch 1 gamemode, also called 2CP.",
+        "screenshot": "https://overfast-api.tekrop.fr/static/gamemodes/assault.avif"
+    }
+]
