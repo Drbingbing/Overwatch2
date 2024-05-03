@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Hanamura",
+        "screenshot": "https://overfast-api.tekrop.fr/static/maps/hanamura.jpg",
+        "gamemodes": [
+            "assault"
+        ],
+        "location": "Tokyo, Japan",
+        "country_code": "JP"
+    }
+]
