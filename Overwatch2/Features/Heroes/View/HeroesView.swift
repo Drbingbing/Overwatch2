@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import WaterfallGrid
 
 struct HeroesView: View {
     let store: StoreOf<HeroesStore>

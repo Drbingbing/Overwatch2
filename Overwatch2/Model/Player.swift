@@ -20,7 +20,7 @@ struct Summary: Codable, Equatable {
     let title: String
     let endorsement: Endorsement
     let competitive: SummaryCompetitive
-    let privacy: String
+    let privacy: String?
     
     
     // MARK: - Endorsement
@@ -73,8 +73,8 @@ struct PlatformStats: Codable, Equatable {
     
     // MARK: - QuickplayClass
     struct GamePlayKind: Codable, Equatable {
-        let heroesComparisons: HeroesComparisons
-        let careerStats: [String: [CareerStat]?]
+        let heroesComparisons: HeroesComparisons?
+        let careerStats: [String: [CareerStat]?]?
 
         enum CodingKeys: String, CodingKey {
             case heroesComparisons = "heroes_comparisons"
@@ -85,7 +85,7 @@ struct PlatformStats: Codable, Equatable {
         struct CareerStat: Codable, Equatable {
             let category: Category
             let label: Label
-            let stats: [Stat]
+            let stats: [Stat]?
         }
         
         
@@ -118,9 +118,9 @@ struct PlatformStats: Codable, Equatable {
         
         // MARK: - HeroesComparisons
         struct HeroesComparisons: Codable, Equatable {
-            let timePlayed, gamesWon, weaponAccuracy: HeroComparisons
+            let timePlayed, gamesWon, weaponAccuracy: HeroComparisons?
             let winPercentage: HeroComparisons?
-            let eliminationsPerLife, criticalHitAccuracy, multikillBest, objectiveKills: HeroComparisons
+            let eliminationsPerLife, criticalHitAccuracy, multikillBest, objectiveKills: HeroComparisons?
 
             enum CodingKeys: String, CodingKey {
                 case timePlayed = "time_played"

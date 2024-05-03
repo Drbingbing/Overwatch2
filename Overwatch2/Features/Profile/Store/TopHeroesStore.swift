@@ -38,9 +38,8 @@ struct TopHeroesStore: Reducer {
             switch action {
             case .setup:
                 state.currentFilter = .timePlayed
-                state.selectedComparisons = state.heroesComparisons
-                    .timePlayed
-                    .values
+                state.selectedComparisons = (state.heroesComparisons
+                    .timePlayed?.values ?? [])
                     .prefix(4)
                     .sorted(by: { $0.value > $1.value })
                     .map { $0 }
@@ -50,19 +49,19 @@ struct TopHeroesStore: Reducer {
                 var all: [PlatformStats.GamePlayKind.HeroComparisons.Value]
                 switch filter {
                 case .timePlayed:
-                    all = state.heroesComparisons.timePlayed.values
+                    all = state.heroesComparisons.timePlayed?.values ?? []
                 case .gamesWon:
-                    all = state.heroesComparisons.gamesWon.values
+                    all = state.heroesComparisons.gamesWon?.values ?? []
                 case .weaponAccuracy:
-                    all = state.heroesComparisons.weaponAccuracy.values
+                    all = state.heroesComparisons.weaponAccuracy?.values ?? []
                 case .elimanationsPerLife:
-                    all = state.heroesComparisons.eliminationsPerLife.values
+                    all = state.heroesComparisons.eliminationsPerLife?.values  ?? []
                 case .criticalHitAccuracy:
-                    all = state.heroesComparisons.criticalHitAccuracy.values
+                    all = state.heroesComparisons.criticalHitAccuracy?.values  ?? []
                 case .multiKillBest:
-                    all = state.heroesComparisons.multikillBest.values
+                    all = state.heroesComparisons.multikillBest?.values  ?? []
                 case .objectiveKills:
-                    all = state.heroesComparisons.objectiveKills.values
+                    all = state.heroesComparisons.objectiveKills?.values  ?? []
                 }
                 state.selectedComparisons = all
                     .prefix(state.showAll ? all.count : 4)

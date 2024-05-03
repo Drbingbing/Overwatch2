@@ -25,10 +25,13 @@ struct CareerStatsView: View {
                 VStack(spacing: 12) {
                     ForEach(careerStats, id: \.label) { careerStat in
                         VStack(spacing: 8) {
-                            ForEach(careerStat.stats, id: \.key) { stats in
-                                CareerStatLabel(title: stats.label, value: stats.value)
-                                if stats.key != careerStat.stats.last?.key {
+                            if let s = careerStat.stats {
+                                ForEach(s, id: \.key) { stats in
+                                    CareerStatLabel(title: stats.label, value: stats.value)
                                     Divider()
+//                                    if stats.key != careerStat.stats.last?.key {
+//                                        Divider()
+//                                    }
                                 }
                             }
                         }
